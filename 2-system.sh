@@ -28,7 +28,8 @@ sed /#de_DE/s/#// ./locale.gen > /etc/locale.gen
 locale-gen
 
 if [ $otherOS=1 ]; then
-  pacman -S os-prober --noconfirm
+    pacman -S gvfs --noconfirm
+    pacman -S os-prober --noconfirm
 fi
 grub-mkconfig -o /boot/grub/grub.cfg
 grub-install $harddrive
