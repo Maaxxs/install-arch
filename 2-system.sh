@@ -29,6 +29,7 @@ locale-gen
 
 grub-mkconfig -o /boot/grub/grub.cfg
 grub-install $harddrive
+chmod 777 /3-basic.sh
 mv /3-basic.sh /home/$username/
 rm -f /2-system.sh
 echo "####################################################################"

@@ -8,7 +8,7 @@ grafik=1            # 1 = open-source-nvidia driver: xf86-video-nouveau (for int
                     # 3 = xf86-video-intel driver. only intel HD graphics
                     # 4 = virtualbox driver (only for installation in virtualbox!)
 # check if there is a internet connection
-if [ ping -c 1 archlinux.org >> /dev/null 2>&1 ]; then
+if ping -c 1 archlinux.org >> /dev/null 2>&1; then
     echo "internet connections avaible"
 else
     echo "Establish an internet connection first!"
