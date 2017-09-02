@@ -44,5 +44,5 @@ progs_aur=(
 	surfn-icons-git
 	vibrancy-colors
 
-sudo pacman -S ${progs[*]}
-pacaur -S ${progs_aur[*]}
+sudo pacman -S "${progs[*]}"
+pacaur -S "${progs_aur[*]}"

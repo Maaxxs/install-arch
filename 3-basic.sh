@@ -2,16 +2,23 @@
 
 ### variables
 #username="max"      # change it to your username
+printerSupport=0 	# 0 = off, 1 = on
 grafik=1            # 1 = open-source-nvidia driver: xf86-video-nouveau (for intelligent switching between intel HD graphics and your NVIDIA graphics card)
                     # 2 = nvidia and nvidia-settings
                     # 3 = xf86-video-intel driver. only intel HD graphics
                     # 4 = virtualbox driver (only for installation in virtualbox!)
-printerSupport=0    # 0 = off, 1 = on
+# check if there is a internet connection
+if [ ping -c 1 archlinux.org >> /dev/null 2>&1 ]; then
+    echo "internet connections avaible"
+else
+    echo "Establish an internet connection first!"
+    exit
+fi
 
-if [ $printerSupport = 0 ]; then
+if [ "$printerSupport" = 0 ]; then
     sudo pacman -S acpid ntp avahi cronie --noconfirm
     sudo systemctl enable acpid avahi-daemon cronie ntpd
-elif [ $printerSupport = 1 ]; then
+elif [ "$printerSupport" = 1 ]; then
     sudo pacman -S acpid ntp avahi cronie cups --noconfirm
     sudo systemctl enable acpid avahi-daemon cronie ntpd org.cups.cupsd.service
 else
@@ -19,13 +26,13 @@ else
 fi
 sudo ntpd -gq
 
-if [ $grafik = 1 ]; then
+if [ "$grafik" = 1 ]; then
     sudo pacman -S xf86-video-nouveau --noconfirm
-elif [ $grafik = 2 ]; then
+elif [ "$grafik" = 2 ]; then
     sudo pacman -S nvidia nvidia-settings --noconfirm
-elif [ $grafik = 3 ]; then
+elif [ "$grafik" = 3 ]; then
     sudo pacman -S xf86-video-intel --noconfirm
-elif [ $grafik = 4 ]; then
+elif [ "$grafik" = 4 ]; then
     printf '2\nY' | sudo pacman -S virtualbox-guest-utils
 else
     echo "Change the varibale grafik to something valid"
@@ -33,6 +40,7 @@ fi
 
 sudo pacman -S xorg-server xorg-xinit xfce4 xfce4-goodies lightdm lightdm-gtk-greeter networkmanager network-manager-applet nm-connection-editor alsa-tools alsa-utils pulseaudio-alsa pavucontrol --noconfirm
 sudo systemctl enable lightdm NetworkManager
+
 # installing AUR helper PACAUR now
 sudo pacman -S git --noconfirm
 #sudo -u $username gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
@@ -43,25 +51,25 @@ sudo pacman -S git --noconfirm
 #sudo -u $username makepkg -rsi PKGBUILD --noconfirm
 #cd /home/$username/pacaur
 #sudo -u $username makepkg -rsi PKGBUILD --noconfirm
-#cd && rm -Rf /home/$username/cower /home/$username/pacaur
+#cd && rm -Rf ~/cower ~/pacaur
 #echo "################### Congrats. PACAUR INSTALLED #################"
 
 gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
 git clone https://aur.archlinux.org/cower.git
 git clone https://aur.archlinux.org/pacaur.git
 
-cd /home/$username/cower
+cd ~/cower
 makepkg -rsi PKGBUILD --noconfirm
-cd /home/$username/pacaur
+cd ~/pacaur
 makepkg -rsi PKGBUILD --noconfirm
-cd && rm -Rf /home/$username/cower /home/$username/pacaur
+cd && rm -Rf ~/cower ~/pacaur
 echo "################### Congrats. PACAUR INSTALLED #################"
 
 
 #german keyboard layout:
 localectl set-x11-keymap de pc105 nodeadkeys
 
-rm -f /home/$username/3-basic.sh
+rm -f ~/3-basic.sh
 echo "########## BASIC INSTALLATION COMPLETE #############"
 echo "########## rebooting ... "
 sleep 4
