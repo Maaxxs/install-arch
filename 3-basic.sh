@@ -67,7 +67,7 @@ echo "################### Congrats. PACAUR INSTALLED #################"
 
 
 #german keyboard layout:
-localectl set-x11-keymap de pc105 nodeadkeys
+sudo localectl set-x11-keymap de pc105 nodeadkeys
 
 rm -f ~/3-basic.sh
 echo "########## BASIC INSTALLATION COMPLETE #############"
