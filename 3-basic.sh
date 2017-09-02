@@ -33,7 +33,7 @@ elif [ "$grafik" = 2 ]; then
 elif [ "$grafik" = 3 ]; then
     sudo pacman -S xf86-video-intel --noconfirm
 elif [ "$grafik" = 4 ]; then
-    printf '2\nY' | sudo pacman -S virtualbox-guest-utils
+    sudo pacman -S virtualbox-guest-modules-arch
 else
     echo "Change the varibale grafik to something valid"
 fi
