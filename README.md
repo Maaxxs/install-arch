@@ -6,4 +6,4 @@ create your partitions and download the first script ("1-setup.sh") with wget:
 
 wget https://raw.githubusercontent.com/maaxxs/install-arch/master/1-setup.sh
 
-EDIT this script and run it. it will automatically download the other 2 scripts. Make sure to edit the other scripts as well and to execute them as root.
+EDIT this script and run it. it will automatically download the other 2 scripts. Make sure to edit the other scripts as well.
