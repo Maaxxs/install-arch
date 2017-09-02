@@ -16,6 +16,7 @@ elif [ $printerSupport = 1 ]; then
     sudo systemctl enable acpid avahi-daemon cronie ntpd org.cups.cupsd.service
 else
     echo "Change variable 'printerSupport' to something valid"
+fi
 sudo ntpd -gq
 
 if [ $grafik = 1 ]; then
