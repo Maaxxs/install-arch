@@ -1,11 +1,15 @@
 #!/bin/bash
+
+# uncomment the programs you want
+# and comment the ones you don't
+
 progs=(
 #	firefox firefox-i18n-de
 	chromium
-#	qt4 vlc
+	qt4 vlc
 	libreoffice-fresh libreoffice-fresh-de hunspell-de
 	thunderbird thunderbird-i18n-de
-	catfish gvfs ntfs-3g
+	catfish gvfs ntfs-3g gvfs-smb sshfs
 	wget git
 	gparted dosfstools
 	most
@@ -14,7 +18,7 @@ progs=(
  	vim
 #	hplip		# (printer database)
 #	geeqie		# Image viewer
-#	os-prober 	# tool to detect other OS automatically. after installing run 'grub-mkconfig -o /boot/grub/grub.cfg' as root
+	os-prober 	# tool to detect other OS automatically. after installing run 'grub-mkconfig -o /boot/grub/grub.cfg' as root
 	light-locker
 # Fonts and Icons
 	noto-fonts
@@ -32,7 +36,7 @@ progs_aur=(
 #	shotcut
 	conky-nvidia
 #	iridium-bin
-#	vivaldi vivaldi-widevine
+	vivaldi vivaldi-widevine
 #	woeusb-git # create bootable windows usb stick with an iso Image
 #	wps-office wps-office-extension-german-dictionary
 	etcher
@@ -43,6 +47,7 @@ progs_aur=(
 	sardi-icons
 	surfn-icons-git
 	vibrancy-colors
+	)
 
-sudo pacman -S "${progs[*]}"
-pacaur -S "${progs_aur[*]}"
+sudo pacman -S ${progs[*]}
+pacaur -S ${progs_aur[*]}
