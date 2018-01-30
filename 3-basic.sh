@@ -19,7 +19,7 @@ fi
 if [ $printerSupport -eq 0 ]; then
     sudo pacman -S acpid ntp avahi cronie --noconfirm
     sudo systemctl enable acpid avahi-daemon cronie ntpd
-elif [ $printerSupport = 1 ]; then
+elif [ $printerSupport -eq 1 ]; then
     sudo pacman -S acpid ntp avahi cronie cups --noconfirm
     sudo systemctl enable acpid avahi-daemon cronie ntpd org.cups.cupsd.service
 else
