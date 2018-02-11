@@ -3,7 +3,8 @@
 # again, set all variables
 
 printerSupport=0    # 0 = off, 1 = on
-grafik=1            # 1 = 'xf86-video-nouveau' open-source-nvidia driver:  (for intelligent switching between intel HD graphics and your NVIDIA graphics card)
+grafik=1            # 1 = 'xf86-video-nouveau' open-source-nvidia driver:
+                    #       (for intelligent switching between intel HD graphics and your NVIDIA graphics card)
                     # 2 = 'nvidia and nvidia-settings'
                     # 3 = 'xf86-video-intel' driver. only intel HD graphics
                     # 4 = 'virtualbox-guest-modules-arch' virtualbox driver (only for installation in virtualbox!)
@@ -24,6 +25,7 @@ elif [ $printerSupport = 1 ]; then
     sudo systemctl enable acpid avahi-daemon cronie ntpd org.cups.cupsd.service
 else
     echo "Change variable 'printerSupport' to something valid"
+    exit
 fi
 sudo ntpd -gq
 
@@ -34,36 +36,29 @@ elif [ $grafik -eq 2 ]; then
 elif [ $grafik -eq 3 ]; then
     sudo pacman -S xf86-video-intel --noconfirm
 elif [ $grafik -eq 4 ]; then
-    sudo pacman -S virtualbox-guest-modules-arch --noconfirm
+    sudo pacman -S virtualbox-guest-modules-arch virtualbox-guest-iso --noconfirm
 else
     echo "Change the varibale grafik to something valid"
+    exit
 fi
 
 sudo pacman -S xorg-server xorg-xinit xfce4 xfce4-goodies lightdm lightdm-gtk-greeter networkmanager network-manager-applet nm-connection-editor alsa-tools alsa-utils pulseaudio-alsa pavucontrol --noconfirm
 sudo systemctl enable lightdm NetworkManager
 
-# installing AUR helper PACAUR
-sudo pacman -S git --noconfirm
-
-gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
-git clone https://aur.archlinux.org/cower.git
-git clone https://aur.archlinux.org/pacaur.git
-
-cd ~/cower
-makepkg -rsi PKGBUILD --noconfirm
-cd ~/pacaur
-makepkg -rsi PKGBUILD --noconfirm
-cd
-rm -Rf ~/cower ~/pacaur
-echo "################### Congratulation. PACAUR INSTALLED #################"
-
+# installing AUR helper Trizen
+sudo pacman -S git --no-confirm
+git clone https://aur.archlinux.org/trizen.git
+cd ~/trizen
+makepkg -rsi PKGBUILD --no-confirm
+rm -rf ~/trizen
 
 # german keyboard layout:
 sudo localectl set-x11-keymap de pc105 nodeadkeys
 
 # cleaning up
 rm -f ~/3-basic.sh
+clear
 echo "########## BASIC INSTALLATION COMPLETE #############"
-echo "########## rebooting ... "
+echo "################### rebooting ... ##################"
 sleep 4
 reboot
