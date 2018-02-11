@@ -37,6 +37,7 @@ mv /3-basic.sh /home/$username/
 # cleaning up. 2nd script is not needed anymore
 rm -f /2-system.sh
 
+clear
 echo "####################################################################"
 echo "logout and reboot your new ARCH ;) you should be able to login..."
 echo "After you logged in AND established an internet connection, EDIT the 3rd script and run it."

@@ -33,6 +33,7 @@ chmod +x /mnt/3-basic.sh
 
 genfstab -Up /mnt >> /mnt/etc/fstab
 
+clear
 echo "####################################################################"
 echo "#####  You're going to be logged in into your new arch system  #####"
 echo "#####  EDIT '2-system.sh' and then execute the script  #############"
