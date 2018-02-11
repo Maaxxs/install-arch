@@ -4,50 +4,130 @@
 # and comment the ones you don't
 
 progs=(
-#	firefox firefox-i18n-de
-	chromium
-	qt4 vlc
-	libreoffice-fresh libreoffice-fresh-de hunspell-de
-	thunderbird thunderbird-i18n-de
-	catfish gvfs ntfs-3g gvfs-smb sshfs
-	wget git
-	gparted dosfstools
-	most
-	openssh
-#	atom
- 	vim
-#	hplip		# (printer database)
-#	geeqie		# Image viewer
-	os-prober 	# tool to detect other OS automatically. after installing run 'grub-mkconfig -o /boot/grub/grub.cfg' as root
-	light-locker
-# Fonts and Icons
-	noto-fonts
-	arc-icon-theme
-	arc-gtk-theme
-	breeze
+acpid 
+alsa-tools 
+alsa-utils 
+arc-gtk-theme 
+arc-icon-theme 
+avahi 
+baobab 
+bash-completion 
+blueman 
+bluez 
+bluez-utils 
+breeze 
+catfish 
+chromium 
+cronie 
+cups 
+davfs2 
+dosfstools 
+evince 
+faenza-icon-theme 
+firefox 
+firefox-i18n-de 
+gdb 
+geeqie 
+gimp 
+git 
+gnome-calculator 
+gparted 
+gtk-engine-murrine 
+gvfs 
+gvfs-gphoto2 
+gvfs-mtp 
+gvfs-nfs 
+hexchat 
+hplip 
+htop 
+hunspell-de 
+jupyter 
+jupyter-nbconvert 
+libreoffice-fresh 
+libreoffice-fresh-de 
+light-locker 
+lightdm-gtk-greeter-settings 
+most 
+mtools 
+nasm 
+ncdu 
+network-manager-applet 
+networkmanager 
+networkmanager-openconnect 
+nm-connection-editor 
+noto-fonts 
+ntp 
+numix-gtk-theme 
+nvidia 
+nvidia-settings 
+openssh 
+os-prober 
+papirus-icon-theme 
+pavucontrol 
+pdfshuffler 
+pigz 
+plank 
+playerctl 
+pulseaudio-alsa 
+pulseaudio-bluetooth 
+python-pip 
+qt4 
+reflector 
+rsync 
+sshfs 
+steam 
+stress 
+teamspeak3 
+telegram-desktop 
+thunderbird 
+thunderbird-i18n-de 
+unzip 
+veracrypt 
+vim 
+virtualbox 
+virtualbox-guest-dkms 
+virtualbox-guest-iso 
+vlc 
+wget 
+#whois 
+xarchiver 
+xclip 
+xcursor-simpleandsoft 
 	)
 
 progs_aur=(
-	chromium-widevine
-	menulibre
-	grub-customizer
-	neofetch
-	simple-mtpfs   # jmtpfs
-#	shotcut
-	conky-nvidia
-#	iridium-bin
-	vivaldi vivaldi-widevine
-#	woeusb-git # create bootable windows usb stick with an iso Image
-#	wps-office wps-office-extension-german-dictionary
-	etcher
-# 	teamviewer
-# fonts and icons
-	numix-circle-icon-theme-git
-	numix-themes-darkblue gtk-engine-murrine
-	sardi-icons
-	surfn-icons-git
-	vibrancy-colors
+chromium-widevine 
+conky-nvidia 
+discord-canary 
+dropbox 
+etcher 
+github-desktop 
+grub-customizer 
+gtk-theme-config 
+jmtpfs 
+keybase-bin 
+megasync-git 
+menulibre 
+neofetch 
+numix-circle-icon-theme-git 
+numix-themes-darkblue 
+rambox-bin 
+redshiftgui-bin 
+sardi-icons 
+simple-mtpfs 
+spotify 
+surfn-icons-git 
+trizen 
+vibrancy-colors 
+vim-gruvbox-git 
+virtualbox-ext-oracle 
+visual-studio-code-bin 
+vivaldi 
+woeusb-git 
+#wps-office 
+#wps-office-extension-german-dictionary 
+xfdashboard 
 	)
 
 sudo pacman -S ${progs[*]}
-pacaur -S ${progs_aur[*]}
+trizen -S ${progs_aur[*]}
