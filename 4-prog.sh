@@ -4,22 +4,15 @@
 # and comment the ones you don't
 
 progs=(
-acpid 
-alsa-tools 
-alsa-utils 
 arc-gtk-theme 
 arc-icon-theme 
-avahi 
 baobab 
-bash-completion 
 blueman 
 bluez 
 bluez-utils 
 breeze 
 catfish 
 chromium 
-cronie 
-cups 
 davfs2 
 dosfstools 
 evince 
@@ -29,7 +22,7 @@ firefox-i18n-de
 gdb 
 geeqie 
 gimp 
-git 
+git
 gnome-calculator 
 gparted 
 gtk-engine-murrine 
@@ -38,7 +31,7 @@ gvfs-gphoto2
 gvfs-mtp 
 gvfs-nfs 
 hexchat 
-hplip 
+# hplip 
 htop 
 hunspell-de 
 jupyter 
@@ -48,81 +41,63 @@ libreoffice-fresh-de
 light-locker 
 lightdm-gtk-greeter-settings 
 most 
-mtools 
-nasm 
-ncdu 
-network-manager-applet 
-networkmanager 
 networkmanager-openconnect 
-nm-connection-editor 
 noto-fonts 
-ntp 
 numix-gtk-theme 
-nvidia 
-nvidia-settings 
+nvim
 openssh 
-os-prober 
 papirus-icon-theme 
-pavucontrol 
 pdfshuffler 
 pigz 
-plank 
 playerctl 
-pulseaudio-alsa 
 pulseaudio-bluetooth 
 python-pip 
 qt4 
 reflector 
 rsync 
 sshfs 
-steam 
+# steam 
 stress 
-teamspeak3 
+# teamspeak3 
 telegram-desktop 
 thunderbird 
 thunderbird-i18n-de 
 unzip 
-veracrypt 
+# veracrypt 
 vim 
-virtualbox 
-virtualbox-guest-dkms 
-virtualbox-guest-iso 
 vlc 
 wget 
-#whois 
+# whois 
 xarchiver 
 xclip 
 xcursor-simpleandsoft 
 	)
 
 progs_aur=(
-chromium-widevine 
+# chromium-widevine 
 conky-nvidia 
-discord-canary 
-dropbox 
+# discord-canary 
+# dropbox 
 etcher 
-github-desktop 
+# github-desktop 
 grub-customizer 
 gtk-theme-config 
 jmtpfs 
-keybase-bin 
-megasync-git 
+# keybase-bin 
 menulibre 
 neofetch 
 numix-circle-icon-theme-git 
 numix-themes-darkblue 
-rambox-bin 
-redshiftgui-bin 
+# rambox-bin 
+# redshiftgui-bin 
 sardi-icons 
 simple-mtpfs 
-spotify 
+# spotify 
 surfn-icons-git 
-trizen 
 vibrancy-colors 
 vim-gruvbox-git 
-virtualbox-ext-oracle 
-visual-studio-code-bin 
-vivaldi 
+# visual-studio-code-bin 
+# vivaldi 
 woeusb-git 
 #wps-office 
 #wps-office-extension-german-dictionary 

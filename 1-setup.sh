@@ -23,13 +23,17 @@ else
     exit
 fi
 
-# downloading the other two scripts and moving them to your harddisk
+# downloading the other three scripts and moving them to your harddisk
 wget https://raw.githubusercontent.com/Maaxxs/install-arch/master/2-system.sh
-cp ./2-system.sh /mnt/
 wget https://raw.githubusercontent.com/Maaxxs/install-arch/master/3-basic.sh
+wget https://raw.githubusercontent.com/Maaxxs/install-arch/master/4-prog.sh
+cp ./2-system.sh /mnt/
 cp ./3-basic.sh /mnt/
-chmod +x /mnt/2-system.sh
-chmod +x /mnt/3-basic.sh
+cp ./4-prog.sh /mnt/
+# set all rights, so that the new user can also execute these scripts
+chmod 777 /mnt/2-system.sh
+chmod 777 /mnt/3-basic.sh
+chmod 777 /mnt/4-prog.sh
 
 genfstab -Up /mnt >> /mnt/etc/fstab
 

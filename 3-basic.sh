@@ -42,6 +42,7 @@ else
     exit
 fi
 
+# installing XFCE4 Desktop
 sudo pacman -S xorg-server xorg-xinit xfce4 xfce4-goodies lightdm lightdm-gtk-greeter networkmanager network-manager-applet nm-connection-editor alsa-tools alsa-utils pulseaudio-alsa pavucontrol --noconfirm
 sudo systemctl enable lightdm NetworkManager
 
@@ -58,7 +59,8 @@ sudo localectl set-x11-keymap de pc105 nodeadkeys
 # cleaning up
 rm -f ~/3-basic.sh
 clear
-echo "########## BASIC INSTALLATION COMPLETE #############"
-echo "################### rebooting ... ##################"
+echo "########## BASIC INSTALLATION COMPLETE ##############"
+echo "Once rebooted, you can edit the 4th script and run it"
+echo "################### rebooting ... ###################"
 sleep 4
 reboot
